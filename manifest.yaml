@@ -1,0 +1,30 @@
+version: 0.0.1
+type: plugin
+author: goldjohnking
+name: qwen3-omni-flash
+label:
+  en_US: qwen3-omni-flash
+description:
+  en_US: Plugin for qwen3-omni-flash
+icon: icon.svg
+icon_dark: icon-dark.svg
+resource:
+  memory: 268435456
+  permission:
+    tool:
+      enabled: true
+plugins:
+  tools:
+    - provider/qwen3-omni-flash.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+  minimum_dify_version: 1.9.0
+created_at: 2025-10-30T11:17:53.3653185+08:00
+privacy: PRIVACY.md
+verified: false

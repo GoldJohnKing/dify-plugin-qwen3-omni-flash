@@ -1,0 +1,36 @@
+identity:
+  author: "goldjohnking"
+  name: "qwen3-omni-flash"
+  label:
+    en_US: "qwen3-omni-flash"
+  description:
+    en_US: "Plugin for qwen3-omni-flash"
+  icon: "icon.svg"
+
+credentials_for_provider:
+  qwen3_api_key:
+    type: secret-input
+    required: true
+    label:
+      en_US: Qwen3 API key
+    placeholder:
+      en_US: Enter your Qwen3 API key
+    help:
+      en_US: Get the API key from Aliyun
+    url: https://dashscope.aliyuncs.com
+  qwen3_api_url:
+    type: text-input
+    required: false
+    label:
+      en_US: Qwen3 API base URL
+    placeholder:
+      en_US: https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions
+    help:
+      en_US: Override the Qwen3 API base URL if needed
+
+tools:
+  - tools/qwen3-omni-flash.yaml
+
+extra:
+  python:
+    source: provider/qwen3-omni-flash.py

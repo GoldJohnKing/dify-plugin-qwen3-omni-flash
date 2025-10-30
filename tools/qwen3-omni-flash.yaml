@@ -1,0 +1,57 @@
+identity:
+  name: "qwen3-omni-flash"
+  author: "goldjohnking"
+  label:
+    en_US: "qwen3-omni-flash"
+description:
+  human:
+    en_US: "Plugin for qwen3-omni-flash"
+  llm: "Plugin for qwen3-omni-flash"
+parameters:
+  - name: user_text
+    type: string
+    required: false
+    label:
+      en_US: User's Query Text
+    human_description:
+      en_US: "User's query text"
+    llm_description: "User's query text"
+    form: llm
+  - name: user_audio_base64
+    type: string
+    required: false
+    label:
+      en_US: User's Query Audio (Base64)
+    human_description:
+      en_US: "User's query audio"
+    llm_description: "User's query audio"
+    form: llm
+  - name: system_text
+    type: string
+    required: false
+    label:
+      en_US: System Prompt Text
+    human_description:
+      en_US: "Set or override system prompt"
+    llm_description: "Set or override system prompt"
+    form: llm
+  - name: context
+    type: string
+    required: false
+    label:
+      en_US: Context (JSON)
+    human_description:
+      en_US: "Context in JSON format"
+    llm_description: "Context in JSON format"
+    form: llm
+
+output_schema:
+  type: object
+  properties:
+    assistant_reply_audio:
+      type: string
+      description: "Connection status (completed, failed, error)"
+
+extra:
+  python:
+    source: tools/qwen3-omni-flash.py
