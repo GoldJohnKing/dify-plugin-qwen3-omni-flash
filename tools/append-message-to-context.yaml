@@ -1,0 +1,52 @@
+identity:
+  name: "append-message-to-context"
+  author: "goldjohnking"
+  label:
+    en_US: "Append Message to Context"
+description:
+  human:
+    en_US: "Append message to context"
+  llm: "Append message to context"
+
+parameters:
+  - name: role
+    type: select
+    required: true
+    options:
+      - value: system
+        label:
+          en_US: "System"
+      - value: user
+        label:
+          en_US: "User"
+      - value: assistant
+        label:
+          en_US: "Assistant"
+    label:
+      en_US: Role
+    human_description:
+      en_US: "Role of the message"
+    llm_description: "Role of the message"
+    form: llm
+  - name: message
+    type: string
+    required: true
+    label:
+      en_US: Message
+    human_description:
+      en_US: "Message to append to the context"
+    llm_description: "Message to append to the context"
+    form: llm
+  - name: context
+    type: string
+    required: false
+    label:
+      en_US: Context (JSON)
+    human_description:
+      en_US: "Original context in JSON format"
+    llm_description: "Original context in JSON format"
+    form: llm
+
+extra:
+  python:
+    source: tools/append-message-to-context.py
