@@ -2,11 +2,11 @@ identity:
   name: "qwen3-omni-flash"
   author: "goldjohnking"
   label:
-    en_US: "qwen3-omni-flash"
+    en_US: "Multimodal LLM Node (Qwen3-Omni-Flash)"
 description:
   human:
-    en_US: "Plugin for qwen3-omni-flash"
-  llm: "Plugin for qwen3-omni-flash"
+    en_US: "Multimodal LLM Node for Qwen3-Omni-Flash"
+  llm: "Multimodal LLM Node for Qwen3-Omni-Flash"
 
 parameters:
   - name: modal_type

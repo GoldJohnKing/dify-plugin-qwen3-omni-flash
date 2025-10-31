@@ -2,9 +2,9 @@ identity:
   author: "goldjohnking"
   name: "qwen3-omni-flash"
   label:
-    en_US: "qwen3-omni-flash"
+    en_US: "Qwen3-Omni-Flash"
   description:
-    en_US: "Plugin for qwen3-omni-flash"
+    en_US: "Multimodal LLM for Qwen3-Omni-Flash"
   icon: "icon.svg"
 
 credentials_for_provider:
