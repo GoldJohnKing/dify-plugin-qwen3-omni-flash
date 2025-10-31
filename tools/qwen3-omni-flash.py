@@ -137,7 +137,7 @@ class Qwen3OmniFlashTool(Tool):
 
         yield self.create_text_message(assistant_reply_text)
 
-        yield self.create_variable_message("context", json.dumps(messages))
+        yield self.create_variable_message("context", json.dumps(messages, ensure_ascii=False))
 
         yield self.create_json_message({
             "status": "success",
