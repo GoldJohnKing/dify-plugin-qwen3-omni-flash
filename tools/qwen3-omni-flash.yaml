@@ -7,33 +7,48 @@ description:
   human:
     en_US: "Plugin for qwen3-omni-flash"
   llm: "Plugin for qwen3-omni-flash"
+
 parameters:
-  - name: user_text
-    type: string
-    required: false
+  - name: modal_type
+    type: select
+    required: true
+    options:
+      - value: audio
+        label:
+          en_US: "Text + Audio"
+#      - value: image
+#        label:
+#          en_US: "Text + Image"
+#      - value: video
+#        label:
+#          en_US: "Text + Video"
+#      - value: video_image_sequence
+#        label:
+#          en_US: "Text + Video (Image Sequence)"
+      - value: text
+        label:
+          en_US: "Text Only"
     label:
-      en_US: User's Query Text
+      en_US: Modality Type
     human_description:
-      en_US: "User's query text"
-    llm_description: "User's query text"
+      en_US: Modality Type
+    llm_description: Modality Type
     form: llm
-  - name: user_audio_base64
-    type: string
-    required: false
+  - name: response_modal_type
+    type: select
+    required: true
+    options:
+      - value: audio
+        label:
+          en_US: "Text + Audio"
+      - value: text
+        label:
+          en_US: "Text Only"
     label:
-      en_US: User's Query Audio (Base64)
+      en_US: Assistant Response Modality
     human_description:
-      en_US: "User's query audio"
-    llm_description: "User's query audio"
-    form: llm
-  - name: system_text
-    type: string
-    required: false
-    label:
-      en_US: System Prompt Text
-    human_description:
-      en_US: "Set or override system prompt"
-    llm_description: "Set or override system prompt"
+      en_US: Assistant Response Modality
+    llm_description: Assistant Response Modality
     form: llm
   - name: context
     type: string
@@ -44,13 +59,72 @@ parameters:
       en_US: "Context in JSON format"
     llm_description: "Context in JSON format"
     form: llm
+  - name: system_prompt
+    type: string
+    required: false
+    label:
+      en_US: System Prompt
+    human_description:
+      en_US: "Set or override system prompt"
+    llm_description: "Set or override system prompt"
+    form: llm
+  - name: user_query_text
+    type: string
+    required: false
+    label:
+      en_US: User's Query Text
+    human_description:
+      en_US: "User query text"
+    llm_description: "User query text"
+    form: llm
+  - name: modal_payload_type
+    type: select
+    required: false
+    options:
+      - value: url
+        label:
+          en_US: "URL"
+      - value: base64
+        label:
+          en_US: "Base64"
+    label:
+      en_US: Modality Payload Type
+    human_description:
+      en_US: Modality Payload Type
+    llm_description: Modality Payload Type
+    form: llm
+  - name: modal_payload
+    type: string
+    required: false
+    label:
+      en_US: modal_payload
+    human_description:
+      en_US: Modality Payload
+    llm_description: Modality Payload
+    form: llm
+  - name: audio_format
+    type: select
+    required: false
+    options:
+      - value: wav
+        label:
+          en_US: "wav"
+      - value: mp3
+        label:
+          en_US: "mp3"
+    label:
+      en_US: Audio Modality Format
+    human_description:
+      en_US: Audio Modality Format
+    llm_description: Audio Modality Format
+    form: llm
 
 output_schema:
   type: object
   properties:
-    assistant_reply_audio:
+    context:
       type: string
-      description: "Connection status (completed, failed, error)"
+      description: "Context (JSON)"
 
 extra:
   python:

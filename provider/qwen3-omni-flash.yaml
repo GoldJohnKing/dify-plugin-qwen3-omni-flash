@@ -27,6 +27,7 @@ credentials_for_provider:
       en_US: https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions
     help:
       en_US: Override the Qwen3 API base URL if needed
+    url: https://help.aliyun.com/zh/model-studio/qwen-omni
 
 tools:
   - tools/qwen3-omni-flash.yaml
