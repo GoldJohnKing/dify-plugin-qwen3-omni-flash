@@ -29,10 +29,10 @@ parameters:
         label:
           en_US: "Text Only"
     label:
-      en_US: Modality Type
+      en_US: User Query Modality Type
     human_description:
-      en_US: Modality Type
-    llm_description: Modality Type
+      en_US: User Query Modality Type
+    llm_description: User Query Modality Type
     form: llm
   - name: response_modal_type
     type: select
@@ -45,10 +45,10 @@ parameters:
         label:
           en_US: "Text Only"
     label:
-      en_US: Assistant Response Modality
+      en_US: Assistant Response Modality Type
     human_description:
-      en_US: Assistant Response Modality
-    llm_description: Assistant Response Modality
+      en_US: Assistant Response Modality Type
+    llm_description: Assistant Response Modality Type
     form: llm
   - name: context
     type: string
@@ -72,7 +72,7 @@ parameters:
     type: string
     required: false
     label:
-      en_US: User's Query Text
+      en_US: User Query Text
     human_description:
       en_US: "User query text"
     llm_description: "User query text"
@@ -88,19 +88,19 @@ parameters:
         label:
           en_US: "Base64"
     label:
-      en_US: Modality Payload Type
+      en_US: User Query Modality Payload Type
     human_description:
-      en_US: Modality Payload Type
-    llm_description: Modality Payload Type
+      en_US: User Query Modality Payload Type
+    llm_description: User Query Modality Payload Type
     form: llm
   - name: modal_payload
     type: string
     required: false
     label:
-      en_US: modal_payload
+      en_US: User Query Modality Payload
     human_description:
-      en_US: Modality Payload
-    llm_description: Modality Payload
+      en_US: "User query modality payload, URL if `modal_payload_type` is set to `URL`, base64 otherwise."
+    llm_description: "User query modality payload, URL if `modal_payload_type` is set to `URL`, base64 otherwise."
     form: llm
   - name: audio_format
     type: select
@@ -113,10 +113,10 @@ parameters:
         label:
           en_US: "mp3"
     label:
-      en_US: Audio Modality Format
+      en_US: User Query Audio Format
     human_description:
-      en_US: Audio Modality Format
-    llm_description: Audio Modality Format
+      en_US: User Query Audio Format
+    llm_description: User Query Audio Format
     form: llm
 
 output_schema:
